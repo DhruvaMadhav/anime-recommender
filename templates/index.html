@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Anime Recommender</title>
+</head>
+<body>
+    <h1>Your Favorite anime</h1>
+    <form method="POST">
+        <label for="options">Choose an anime:</label>
+        <input list="options_list" name="options" id="options" autocomplete="off">
+        <datalist id="options_list">
+            {% for option in options %}
+                <option value="{{ option }}">
+            {% endfor %}
+        </datalist>
+        <button type="submit">Recommend</button>
+    </form>
+    <div class="rec">
+    {% if recommended %}
+        <h2>You might also like:</h2>
+        <ul>
+            {% for anime,poster in recommended %}
+                <li><img src='{{ poster }}'>
+                    <h6>{{anime}}</h6>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+</body>
+</html>
