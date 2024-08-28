@@ -22,9 +22,9 @@
     {% if recommended %}
         <h2>You might also like:</h2>
         <ul>
-            {% for anime,poster,mal in recommended %}
+            {% for anime,poster in recommended %}
                 <li><img src='{{ poster }}'>
-                    <a href="{{mal}}">{{anime}}</a>
+                    <h6>{{anime}}</h6>
                 </li>
             {% endfor %}
         </ul>
