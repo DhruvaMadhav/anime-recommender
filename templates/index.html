@@ -24,7 +24,7 @@
         <ul>
             {% for anime,poster,mal in recommended %}
                 <li><img src='{{ poster }}'>
-                    <h6 link="{{mal}}">{{anime}}</h6>
+                    <a link="{{mal}}">{{anime}}</a>
                 </li>
             {% endfor %}
         </ul>
