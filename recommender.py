@@ -31,6 +31,7 @@ def recommend(anime):
     anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])
     recommended_anime = []
     anime_posters = []
+    mal_links = []
     i = 0
     while len(recommended_anime) < 5:
       new_anime_id = int(new_df.iloc[anime_list[i][0]]['MAL_ID'])
@@ -39,5 +40,6 @@ def recommend(anime):
         json_data = get_poster(new_anime_id)
         recommended_anime.append(new_anime)
         anime_posters.append(json_data)
+        mal_links.append(f"https://myanimelist.net/anime/{new_anime_id}")
       i += 1
     return (recommended_anime,anime_posters)
