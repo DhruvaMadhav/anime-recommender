@@ -24,6 +24,7 @@
         <ul>
             {% for anime,poster,link in recommended %}
             <a href="{{link}}" target="_blank">
+                {{poster}}
                 <li><img src="{{ poster }}" alt="{{ anime }}">
                     <h6>{{anime}}</h6>
                 </li>
