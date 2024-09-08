@@ -1,5 +1,7 @@
+import os
 import pickle
 import requests
+from dotenv import load_dotenv
 
 # Load DataFrame
 with open('new_df.pkl', 'rb') as f:
@@ -10,7 +12,8 @@ with open('similarity.pkl', 'rb') as f:
     similarity = pickle.load(f)
 
 def get_poster(anime_id):
-    client_id = '96a6e997c7a3ed86ce357db51022394a'
+    load_dotenv()
+    client_id = os.getenv('client_id')
 
     url = f'https://api.myanimelist.net/v2/anime/{anime_id}'
 
