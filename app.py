@@ -23,8 +23,8 @@ def home():
         print(f"Selected option: {selected_option}")  # Debugging line
         if selected_option:
             try:
-                animes, posters = recommend(selected_option)
-                recommended = list(zip(animes, posters))
+                animes, posters, links = recommend(selected_option)
+                recommended = list(zip(animes, posters, links))
             except Exception as e:
                 print(f"Error in recommend function: {e}")  # Debugging line
 
