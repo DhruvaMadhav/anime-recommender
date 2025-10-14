@@ -25,8 +25,8 @@ venv/
 Thumbs.db
 
 # --- Data / Artifacts ---
-anime_vectors.npy
 *.npy
+!anime_vectors.npy
 *.pkl
 *.json
 !vercel.json
@@ -41,3 +41,4 @@ anime_vectors.npy
 /vectorization/__pycache__/
 /static/css/__pycache__/
 /templates/html/__pycache__/
+.vercel
