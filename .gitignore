@@ -1,0 +1,42 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+*.tmp
+*.swp
+
+# --- Virtual Environments ---
+.env
+.venv
+env/
+venv/
+
+# --- IDE / Editor files ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Data / Artifacts ---
+anime_vectors.npy
+*.npy
+*.pkl
+*.json
+!anime_metadata.json
+!root_map.json
+!top_2000_cleaned.json
+!top_2000_anime.json
+
+# --- Other ---
+/data processing/__pycache__/
+/recommenders/__pycache__/
+/vectorization/__pycache__/
+/static/css/__pycache__/
+/templates/html/__pycache__/
