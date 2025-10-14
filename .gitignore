@@ -25,7 +25,7 @@ venv/
 Thumbs.db
 
 # --- Data / Artifacts ---
-anime_vectors.npy
+!anime_vectors.npy
 *.npy
 *.pkl
 *.json
