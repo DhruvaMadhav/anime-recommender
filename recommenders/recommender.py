@@ -23,7 +23,7 @@ poster_root = {m['mal_id']: m['poster'] for m in metadata}
 # -----------------------
 # 2️⃣ Recommendation Function
 # -----------------------
-def recommend_by_title(title, top_k=10, alpha=0.8, beta=0.2):
+def recommend_by_title(title, top_k=10, alpha=0.9, beta=0.1):
     """
     Recommend anime based on hybrid embeddings, balancing similarity and score.
     

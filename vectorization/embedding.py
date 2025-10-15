@@ -46,6 +46,8 @@ with open("root_map.json", "r", encoding="utf-8") as f:
 # -----------------------
 for anime in anime_list:
     anime['clean_synopsis'] = preprocess_synopsis(anime.get('synopsis', ''))
+    type = anime.get('type')
+    source = anime.get('source')
     
     genres = [g['name'] for g in anime.get('genres', [])]
     studios = [s['name'] for s in anime.get('studios', [])]
@@ -53,18 +55,20 @@ for anime in anime_list:
     demographics = [d['name'] for d in anime.get('demographics', [])]
 
     hybrid_text = anime['clean_synopsis']
-    
+    hybrid_text += " Type: " + type * 2
+    hybrid_text += " Source: " + source * 2
     if genres:
-        genre_text = " Genres: " + ", ".join(genres)
-        hybrid_text += genre_text * 3  # repeating 3 times for more weight
+        genre_text = ", ".join(genres)
+        hybrid_text += " Genres: " + genre_text * 4
     if studios:
-        hybrid_text += " Studios: " + ", ".join(studios)
+        studio_text = ", ".join(studios)
+        hybrid_text += " Studios: " + studio_text * 2
     if themes:
-        theme_text = " Themes: " + ", ".join(themes)
-        hybrid_text += theme_text * 3
+        theme_text = ", ".join(themes)
+        hybrid_text += " Themes: " + theme_text * 3
     if demographics:
-        demo_text = " Demographics: " + ", ".join(demographics)
-        hybrid_text += demo_text * 2
+        demo_text = ", ".join(demographics)
+        hybrid_text += " Demographics: " + demo_text * 3
 
     anime['hybrid_text'] = hybrid_text
 

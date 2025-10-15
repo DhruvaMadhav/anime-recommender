@@ -11,6 +11,7 @@ cleaned_data = []
 for anime in anime_data:
     mal_id = anime.get("mal_id")
     title = anime.get("title_english") or anime.get("title")
+    type = anime.get("type")
     episodes = anime.get("episodes")
     status = anime.get("status")
     score = anime.get("score")
@@ -18,6 +19,7 @@ for anime in anime_data:
     members = anime.get("members")
     synopsis = anime.get("synopsis")
     poster = anime.get("images", {}).get("jpg", {}).get("image_url", "")
+    source = anime.get("source")
 
     studios = [
         {"id": s.get("mal_id"), "name": s.get("name")}
@@ -66,11 +68,13 @@ for anime in anime_data:
         "mal_id": mal_id,
         "title": title,
         "episodes": episodes,
+        "type": type,
         "status": status,
         "score": score,
         "rank": rank,
         "members": members,
         "synopsis": synopsis,
+        "source": source,
         "studios": studios,
         "genres": genres,
         "themes": themes,
